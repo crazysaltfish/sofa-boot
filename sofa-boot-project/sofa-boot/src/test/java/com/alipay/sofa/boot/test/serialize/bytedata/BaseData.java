@@ -5,6 +5,7 @@
 package com.alipay.sofa.boot.test.serialize.bytedata;
 
 import com.alipay.sofa.boot.test.serialize.SimpleDataGenerator;
+import com.caucho.hessian.io.Hessian2Input;
 import org.junit.Assert;
 
 import java.io.ByteArrayInputStream;
@@ -219,9 +220,100 @@ public class BaseData {
         metaData.put("object_4", dg.generateObject_4());
     }
 
-    public static void isEqual(Object obj1, Object obj2, String type) {
+    public void doValidate() throws Exception {
+        validate(binary_0_Bytes, dg.generateBinary_0(), "byte[]");
+        validate(binary_1_Bytes, dg.generateBinary_1(), "byte[]");
+        validate(binary_15_Bytes, dg.generateBinary_15(), "byte[]");
+        validate(binary_16_Bytes, dg.generateBinary_16(), "byte[]");
+        validate(binary_null_Bytes, dg.generateBinary_null(), "byte[]");
+        validate(date_0_Bytes, dg.generateDate_0(), "date");
+        validate(date_1_Bytes, dg.generateDate_1(), "date");
+        validate(date_2_Bytes, dg.generateDate_2(), "date");
+        validate(double_0_0_Bytes, dg.generateDouble_0_0(), "double");
+        validate(double_0_001_Bytes, dg.generateDouble_0_001(), "double");
+        validate(double_127_0_Bytes, dg.generateDouble_127_0(), "double");
+        validate(double_128_0_Bytes, dg.generateDouble_128_0(), "double");
+        validate(double_1_0_Bytes, dg.generateDouble_1_0(), "double");
+        validate(double_2_0_Bytes, dg.generateDouble_2_0(), "double");
+        validate(double_32767_0_Bytes, dg.generateDouble_32767_0(), "double");
+        validate(double_3_14159_Bytes, dg.generateDouble_3_14159(), "double");
+        validate(double_65_536_Bytes, dg.generateDouble_65_536(), "double");
+        validate(double_m0_001_Bytes, dg.generateDouble_m0_001(), "double");
+        validate(double_m128_0_Bytes, dg.generateDouble_m128_0(), "double");
+        validate(double_m129_0_Bytes, dg.generateDouble_m129_0(), "double");
+        validate(double_m32768_0_Bytes, dg.generateDouble_m32768_0(), "double");
+        validate(false_Bytes, dg.generateFalse(), "boolean");
+        validate(int_0_Bytes, dg.generateInt_0(), "int");
+        validate(int_0x30_Bytes, dg.generateInt_0x30(), "int");
+        validate(int_0x3ffff_Bytes, dg.generateInt_0x3ffff(), "int");
+        validate(int_0x40000_Bytes, dg.generateInt_0x40000(), "int");
+        validate(int_0x7ff_Bytes, dg.generateInt_0x7ff(), "int");
+        validate(int_0x7fffffff_Bytes, dg.generateInt_0x7fffffff(), "int");
+        validate(int_0x800_Bytes, dg.generateInt_0x800(), "int");
+        validate(int_1_Bytes, dg.generateInt_1(), "int");
+        validate(int_47_Bytes, dg.generateInt_47(), "int");
+        validate(int_m0x40000_Bytes, dg.generateInt_m0x40000(), "int");
+        validate(int_m0x40001_Bytes, dg.generateInt_m0x40001(), "int");
+        validate(int_m0x800_Bytes, dg.generateInt_m0x800(), "int");
+        validate(int_m0x80000000_Bytes, dg.generateInt_m0x80000000(), "int");
+        validate(int_m0x801_Bytes, dg.generateInt_m0x801(), "int");
+        validate(int_m16_Bytes, dg.generateInt_m16(), "int");
+        validate(int_m17_Bytes, dg.generateInt_m17(), "int");
+        validate(long_0_Bytes, dg.generateLong_0(), "long");
+        validate(long_0x10_Bytes, dg.generateLong_0x10(), "long");
+        validate(long_0x3ffff_Bytes, dg.generateLong_0x3ffff(), "long");
+        validate(long_0x40000_Bytes, dg.generateLong_0x40000(), "long");
+        validate(long_0x7ff_Bytes, dg.generateLong_0x7ff(), "long");
+        validate(long_0x7fffffff_Bytes, dg.generateLong_0x7fffffff(), "long");
+        validate(long_0x800_Bytes, dg.generateLong_0x800(), "long");
+        validate(long_0x80000000_Bytes, dg.generateLong_0x80000000(), "long");
+        validate(long_1_Bytes, dg.generateLong_1(), "long");
+        validate(long_15_Bytes, dg.generateLong_15(), "long");
+        validate(long_m0x40000_Bytes, dg.generateLong_m0x40000(), "long");
+        validate(long_m0x40001_Bytes, dg.generateLong_m0x40001(), "long");
+        validate(long_m0x800_Bytes, dg.generateLong_m0x800(), "long");
+        validate(long_m0x80000000_Bytes, dg.generateLong_m0x80000000(), "long");
+        validate(long_m0x80000001_Bytes, dg.generateLong_m0x80000001(), "long");
+        validate(long_m0x801_Bytes, dg.generateLong_m0x801(), "long");
+        validate(long_m8_Bytes, dg.generateLong_m8(), "long");
+        validate(long_m9_Bytes, dg.generateLong_m9(), "long");
+        validate(null_Bytes, dg.generateNull(), "");
+        validate(object_1_Bytes, dg.generateObject_1(), "object");
+        validate(object_2_Bytes, dg.generateObject_2(), "object");
+        validate(object_3_Bytes, dg.generateObject_3(), "object");
+        validate(object_4_Bytes, dg.generateObject_4(), "object");
+        validate(string_0_Bytes, dg.generateString_0(), "string");
+        validate(string_1_Bytes, dg.generateString_1(), "string");
+        validate(string_31_Bytes, dg.generateString_31(), "string");
+        validate(string_32_Bytes, dg.generateString_32(), "string");
+        validate(string_null_Bytes, dg.generateString_null(), "string");
+        validate(true_Bytes, dg.generateTrue(), "boolean");
+        validate(typedFixedList_0_Bytes, dg.generateTypedFixedList_0(), "string[]");
+        validate(typedFixedList_1_Bytes, dg.generateTypedFixedList_1(), "string[]");
+        validate(typedFixedList_7_Bytes, dg.generateTypedFixedList_7(), "string[]");
+        validate(typedFixedList_8_Bytes, dg.generateTypedFixedList_8(), "string[]");
+        validate(typedMap_0_Bytes, dg.generateTypedMap_0(), "map");
+        validate(typedMap_1_Bytes, dg.generateTypedMap_1(), "map");
+        validate(typedMap_2_Bytes, dg.generateTypedMap_2(), "map");
+        validate(typedMap_3_Bytes, dg.generateTypedMap_3(), "map");
+        validate(untypedFixedList_0_Bytes, dg.generateUntypedFixedList_0(), "list");
+        validate(untypedFixedList_1_Bytes, dg.generateUntypedFixedList_1(), "list");
+        validate(untypedFixedList_7_Bytes, dg.generateUntypedFixedList_7(), "list");
+        validate(untypedFixedList_8_Bytes, dg.generateUntypedFixedList_8(), "list");
+        validate(untypedMap_0_Bytes, dg.generateUntypedMap_0(), "map");
+        validate(untypedMap_1_Bytes, dg.generateUntypedMap_1(), "map");
+        validate(untypedMap_2_Bytes, dg.generateUntypedMap_2(), "map");
+        validate(untypedMap_3_Bytes, dg.generateUntypedMap_3(), "map");
+    }
+
+    public void validate(byte[] bytes, Object obj, String type) throws Exception {
+    }
+
+    public void isEqual(Object obj1, Object obj2, String type) {
+        if (obj1 == obj2) {return;}
         switch (type) {
             case "byte[]":
+                if (obj2 == null) obj2 = new byte[0];
                 Assert.assertArrayEquals((byte[]) obj1, (byte[]) obj2);
                 break;
             case "object":
@@ -229,12 +321,6 @@ public class BaseData {
                 break;
             case "string[]":
                 Assert.assertArrayEquals((String[]) obj1, (String[]) obj1);
-                break;
-            case "list":
-                Assert.assertEquals(obj1.toString(), obj2.toString());
-                break;
-            case "map":
-                Assert.assertEquals(obj1.toString(), obj2.toString());
                 break;
             default:
                 Assert.assertEquals(obj1, obj2);

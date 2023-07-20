@@ -143,92 +143,11 @@ public class JDKByteData extends BaseData{
 
     @Test
     public void testJdkSerialize() throws Exception {
-        validate(binary_0_Bytes, dg.generateBinary_0(), "byte[]");
-        validate(binary_1_Bytes, dg.generateBinary_1(), "byte[]");
-        validate(binary_15_Bytes, dg.generateBinary_15(), "byte[]");
-        validate(binary_16_Bytes, dg.generateBinary_16(), "byte[]");
-        validate(binary_null_Bytes, dg.generateBinary_null(), "byte[]");
-        validate(date_0_Bytes, dg.generateDate_0(), null);
-        validate(date_1_Bytes, dg.generateDate_1(), null);
-        validate(date_2_Bytes, dg.generateDate_2(), null);
-        validate(double_0_0_Bytes, dg.generateDouble_0_0(), null);
-        validate(double_0_001_Bytes, dg.generateDouble_0_001(), null);
-        validate(double_127_0_Bytes, dg.generateDouble_127_0(), null);
-        validate(double_128_0_Bytes, dg.generateDouble_128_0(), null);
-        validate(double_1_0_Bytes, dg.generateDouble_1_0(), null);
-        validate(double_2_0_Bytes, dg.generateDouble_2_0(), null);
-        validate(double_32767_0_Bytes, dg.generateDouble_32767_0(), null);
-        validate(double_3_14159_Bytes, dg.generateDouble_3_14159(), null);
-        validate(double_65_536_Bytes, dg.generateDouble_65_536(), null);
-        validate(double_m0_001_Bytes, dg.generateDouble_m0_001(), null);
-        validate(double_m128_0_Bytes, dg.generateDouble_m128_0(), null);
-        validate(double_m129_0_Bytes, dg.generateDouble_m129_0(), null);
-        validate(double_m32768_0_Bytes, dg.generateDouble_m32768_0(), null);
-        validate(false_Bytes, dg.generateFalse(), null);
-        validate(int_0_Bytes, dg.generateInt_0(), null);
-        validate(int_0x30_Bytes, dg.generateInt_0x30(), null);
-        validate(int_0x3ffff_Bytes, dg.generateInt_0x3ffff(), null);
-        validate(int_0x40000_Bytes, dg.generateInt_0x40000(), null);
-        validate(int_0x7ff_Bytes, dg.generateInt_0x7ff(), null);
-        validate(int_0x7fffffff_Bytes, dg.generateInt_0x7fffffff(), null);
-        validate(int_0x800_Bytes, dg.generateInt_0x800(), null);
-        validate(int_1_Bytes, dg.generateInt_1(), null);
-        validate(int_47_Bytes, dg.generateInt_47(), null);
-        validate(int_m0x40000_Bytes, dg.generateInt_m0x40000(), null);
-        validate(int_m0x40001_Bytes, dg.generateInt_m0x40001(), null);
-        validate(int_m0x800_Bytes, dg.generateInt_m0x800(), null);
-        validate(int_m0x80000000_Bytes, dg.generateInt_m0x80000000(), null);
-        validate(int_m0x801_Bytes, dg.generateInt_m0x801(), null);
-        validate(int_m16_Bytes, dg.generateInt_m16(), null);
-        validate(int_m17_Bytes, dg.generateInt_m17(), null);
-        validate(long_0_Bytes, dg.generateLong_0(), null);
-        validate(long_0x10_Bytes, dg.generateLong_0x10(), null);
-        validate(long_0x3ffff_Bytes, dg.generateLong_0x3ffff(), null);
-        validate(long_0x40000_Bytes, dg.generateLong_0x40000(), null);
-        validate(long_0x7ff_Bytes, dg.generateLong_0x7ff(), null);
-        validate(long_0x7fffffff_Bytes, dg.generateLong_0x7fffffff(), null);
-        validate(long_0x800_Bytes, dg.generateLong_0x800(), null);
-        validate(long_0x80000000_Bytes, dg.generateLong_0x80000000(), null);
-        validate(long_1_Bytes, dg.generateLong_1(), null);
-        validate(long_15_Bytes, dg.generateLong_15(), null);
-        validate(long_m0x40000_Bytes, dg.generateLong_m0x40000(), null);
-        validate(long_m0x40001_Bytes, dg.generateLong_m0x40001(), null);
-        validate(long_m0x800_Bytes, dg.generateLong_m0x800(), null);
-        validate(long_m0x80000000_Bytes, dg.generateLong_m0x80000000(), null);
-        validate(long_m0x80000001_Bytes, dg.generateLong_m0x80000001(), null);
-        validate(long_m0x801_Bytes, dg.generateLong_m0x801(), null);
-        validate(long_m8_Bytes, dg.generateLong_m8(), null);
-        validate(long_m9_Bytes, dg.generateLong_m9(), null);
-        validate(null_Bytes, dg.generateNull(), null);
-        validate(object_1_Bytes, dg.generateObject_1(), "object");
-        validate(object_2_Bytes, dg.generateObject_2(), "object");
-        validate(object_3_Bytes, dg.generateObject_3(), "object");
-        validate(object_4_Bytes, dg.generateObject_4(), "object");
-        validate(string_0_Bytes, dg.generateString_0(), null);
-        validate(string_1_Bytes, dg.generateString_1(), null);
-        validate(string_31_Bytes, dg.generateString_31(), null);
-        validate(string_32_Bytes, dg.generateString_32(), null);
-        validate(string_null_Bytes, dg.generateString_null(), null);
-        validate(true_Bytes, dg.generateTrue(), null);
-        validate(typedFixedList_0_Bytes, dg.generateTypedFixedList_0(), "string[]");
-        validate(typedFixedList_1_Bytes, dg.generateTypedFixedList_1(), "string[]");
-        validate(typedFixedList_7_Bytes, dg.generateTypedFixedList_7(), "string[]");
-        validate(typedFixedList_8_Bytes, dg.generateTypedFixedList_8(), "string[]");
-        validate(typedMap_0_Bytes, dg.generateTypedMap_0(), "map");
-        validate(typedMap_1_Bytes, dg.generateTypedMap_1(), "map");
-        validate(typedMap_2_Bytes, dg.generateTypedMap_2(), "map");
-        validate(typedMap_3_Bytes, dg.generateTypedMap_3(), "map");
-        validate(untypedFixedList_0_Bytes, dg.generateUntypedFixedList_0(), "list");
-        validate(untypedFixedList_1_Bytes, dg.generateUntypedFixedList_1(), "list");
-        validate(untypedFixedList_7_Bytes, dg.generateUntypedFixedList_7(), "list");
-        validate(untypedFixedList_8_Bytes, dg.generateUntypedFixedList_8(), "list");
-        validate(untypedMap_0_Bytes, dg.generateUntypedMap_0(), "map");
-        validate(untypedMap_1_Bytes, dg.generateUntypedMap_1(), "map");
-        validate(untypedMap_2_Bytes, dg.generateUntypedMap_2(), "map");
-        validate(untypedMap_3_Bytes, dg.generateUntypedMap_3(), "map");
+        doValidate();
     }
 
-    private static void validate(byte[] bytes, Object obj, String type) throws Exception {
+    @Override
+    public void validate(byte[] bytes, Object obj, String type) throws Exception {
         ByteArrayOutputStream bout = new ByteArrayOutputStream();
         bout.write(bytes);
         bout.close();
@@ -237,9 +156,6 @@ public class JDKByteData extends BaseData{
         ByteArrayInputStream bin = new ByteArrayInputStream(body, 0, body.length);
         ObjectInputStream oin = new ObjectInputStream(bin);
 
-        if (type == null) {
-            type = "";
-        }
         isEqual(obj, oin.readObject(), type);
         oin.close();
     }
